@@ -1,6 +1,5 @@
 package com.company.easy;
 
-class BuildArrayFromPermutation {
     /*
     Given a zero-based permutation nums (0-indexed), build an array ans of the same length where ans[i] = nums[nums[i]]
         for each 0 <= i < nums.length and return it.
@@ -14,14 +13,20 @@ class BuildArrayFromPermutation {
     = [0,1,2,4,5,3]
 
      */
+    public class BuildArrayFromPermutation {
 
     public static void main(String[] args) {
         //
-        System.out.println(buildArray(null));
+        System.out.println(buildArray(new int[]{5,0,1,2,3,4}));
     }
-
     public static int[] buildArray(int[] nums) {
         //
-        return null;
+        int[] result = new int[nums.length];
+
+        for (int j = 0; j < nums.length; j++) {
+            result[j] = nums[nums[j]];
+        }
+
+        return result;
     }
 }
