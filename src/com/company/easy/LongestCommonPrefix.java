@@ -1,18 +1,27 @@
 package com.company.easy;
 
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class LongestCommonPrefix {
-    //
     public static void main(String[] args) {
-        //
-        String[] words = {"flower", "flow", "flight"};
-        longestCommonPrefix(words);
+
+        String[] strs1 = {"flower","flow","flight"};
+        System.out.println(longestCommonPrefix(strs1));
+
+        String[] strs2 = {"aaa","bbbb","ccc"};
+        System.out.println(longestCommonPrefix(strs2));
     }
 
     public static String longestCommonPrefix(String[] strs) {
         //
-        String result = "";
-        System.out.println(System.currentTimeMillis());
+        List<String> a = Arrays.stream(strs).sorted(Comparator.comparing(String::length)).collect(Collectors.toList());
+        String min = a.get(0);
 
-        return result;
+        a.remove(0);
+
+        return "";
     }
 }
